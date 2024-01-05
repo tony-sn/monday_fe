@@ -29,12 +29,12 @@ const SignUp = () => {
                     >
                       <div id='monday-welcome-wrapper'>
                         <div className='flex-wrap flex items-center justify-center'>
-                          <h1 className='text-center mt-0 mb-2 font-poppins -tracking-[0.5px] px-1 py-0 font-medium antialiased text-[32px]/[40px]'>
+                          <h1 className='text-center border-transparent border text-primary-text-color mt-0 mb-2 font-poppins -tracking-[0.5px] px-1 py-0 font-medium antialiased text-[32px]/[40px]'>
                             Welcome to monday.com
                           </h1>
                         </div>
-                        <h2 className='text-base text-center mt-0 mb-12 antialiased px-1 py-0 -tracking-[0.1px] font-medium'>
-                          Get started - it&apos;s free! No credit card needed.
+                        <h2 className='text-[16px]/[30px] font-poppins border border-transparent text-center mt-0 mb-12 antialiased px-1 py-0 -tracking-[0.1px] font-medium'>
+                          Get started - it&apos;s free. No credit card needed.
                         </h2>
                       </div>
                       <div
@@ -43,7 +43,9 @@ const SignUp = () => {
                       >
                         <button
                           type='button'
-                          className='leading-[22px] font-monday px-[var(--spacing-medium)] py-[var(--spacing-small)] whitespace-nowrap rounded-[4px] inline-flex cursor-pointer items-center justify-center select-none min-w-[auto] h-10 w-full border border-ui-border-color text-primary-text-color transition-[min-width]'
+                          className='leading-[22px] font-monday px-[var(--spacing-medium)] py-[var(--spacing-small)] whitespace-nowrap rounded-[4px] inline-flex cursor-pointer items-center justify-center select-none min-w-[auto] h-10 w-full border border-ui-border-color text-primary-text-color transition-[min-width] hover:bg-[var(--primary-background-hover-color)]
+
+                          '
                         >
                           <img
                             className='w-4 mr-[var(--spacing-small)]'
@@ -51,7 +53,7 @@ const SignUp = () => {
                           />
                           <span>Continue with Google</span>
                         </button>
-                        <div className='grid gap-[var(--spacing-small)] grid-cols-balance my-[var(--spacing-medium)] w-full'>
+                        <div className='grid gap-[var(--spacing-small)] grid-cols-even my-[var(--spacing-medium)] w-full'>
                           <div className='self-end border-t border-[var(--layout-border-color)] h-1/2' />
                           Or
                           <div className='self-end border-t border-[var(--layout-border-color)] h-1/2' />
@@ -81,7 +83,7 @@ const SignUp = () => {
                                     aria-invalid='false'
                                     aria-activedescendant
                                     aria-owns
-                                    className='w-full h-full outline-0 bg-transparent border-solid border border-ui-border-color rounded-[4px] text-primary-text-color px-[var(--spacing-medium)] py-[var(--spacing-small)] whitespace-nowrap'
+                                    className='w-full h-full outline-0 bg-transparent focus:border-[var(--primary-color)] border-solid border border-ui-border-color rounded-[4px] text-primary-text-color px-[var(--spacing-medium)] py-[var(--spacing-small)] font-monday text-base text-ellipsis whitespace-nowrap'
                                   />
                                 </div>
                               </div>
@@ -145,10 +147,19 @@ const SignUp = () => {
                           targer='_blank'
                           className='text-[var(--color-link-color)] text-base font-normal hover:underline decoration-[var(--color-link-color)] whitespace-nowrap flex items-center'
                         >
-                          <span>Login</span>
+                          <span>Log in</span>
                         </a>
                       </div>
                     </div>
+                  </div>
+                  <div
+                    id='monday-right-screen'
+                    className='bg-[rgb(97, 97, 255)] flex justify-center overflow-hidden'
+                  >
+                    <img
+                      className='h-full w-[unset] max-w-none'
+                      src='https://dapulse-res.cloudinary.com/image/upload/monday_platform/signup/signup-right-side-assets-new-flow/welcome-to-monday.png'
+                    />
                   </div>
                 </div>
               </div>
