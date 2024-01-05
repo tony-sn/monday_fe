@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css?family=Figtree');
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Noto+Kufi+Arabic&family=Noto+Sans+Hebrew&family=Noto+Sans+JP&family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Noto+Kufi+Arabic&family=Noto+Sans+Hebrew&family=Noto+Sans+JP&family=Roboto&family=Poppins');
 
 :root {
   --font-family: 'Figtree', 'Roboto', 'Noto Sans Hebrew', 'Noto Kufi Arabic',
@@ -11,4 +10,7 @@
   --spacing-small: 8px;
   --spacing-medium: 16px;
   --layout-border-color: #d0d4e4;
+  --text-color-on-primary: #fff;
+  --primary-color: #0073e3;
+  --color-link-color: #1f76c2;
 }

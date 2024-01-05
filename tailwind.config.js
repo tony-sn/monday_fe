@@ -11,6 +11,7 @@ module.exports = {
         'Noto Sans JP',
         'sans-serif',
       ],
+      poppins: 'Poppins, sans-serif',
     },
     extend: {
       gridTemplateColumns: {
