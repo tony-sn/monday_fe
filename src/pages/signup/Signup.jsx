@@ -83,7 +83,7 @@ const SignUp = () => {
                                     aria-invalid='false'
                                     aria-activedescendant
                                     aria-owns
-                                    className='w-full h-full outline-0 bg-transparent focus:border-[var(--primary-color)] border-solid border border-ui-border-color rounded-[4px] text-primary-text-color px-[var(--spacing-medium)] py-[var(--spacing-small)] font-monday text-base text-ellipsis whitespace-nowrap'
+                                    className='w-full h-full outline-0 bg-transparent hover:border-primary-text-color focus:border-[var(--primary-color)] border-solid border border-ui-border-color rounded-[4px] text-primary-text-color px-[var(--spacing-medium)] py-[var(--spacing-small)] font-monday text-base text-ellipsis whitespace-nowrap'
                                   />
                                 </div>
                               </div>
