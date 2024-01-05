@@ -25,7 +25,7 @@ const SignUp = () => {
                   >
                     <div
                       id='monday-left-items'
-                      className='flex items-center justify-center flex-1 flex-col'
+                      className='flex items-center justify-center flex-[1] flex-col'
                     >
                       <div id='monday-welcome-wrapper'>
                         <div className='flex-wrap flex items-center justify-center'>
@@ -33,7 +33,7 @@ const SignUp = () => {
                             Welcome to monday.com
                           </h1>
                         </div>
-                        <h2 className='text-base text-center mb-12 antialiased px-1 py-0 -tracking-[0.1px] font-medium'>
+                        <h2 className='text-base text-center mt-0 mb-12 antialiased px-1 py-0 -tracking-[0.1px] font-medium'>
                           Get started - it&apos;s free! No credit card needed.
                         </h2>
                       </div>
@@ -51,6 +51,12 @@ const SignUp = () => {
                           />
                           <span>Continue with Google</span>
                         </button>
+                        <div className='grid gap-[var(--spacing-small)] grid-cols-balance my-[var(--spacing-medium)] w-full'>
+                          <div className='self-end border-t border-[var(--layout-border-color)] h-1/2' />
+                          Or
+                          <div className='self-end border-t border-[var(--layout-border-color)] h-1/2' />
+                        </div>
+                        {/* TODO: continue inputs and button here*/}
                       </div>
                     </div>
                   </div>

@@ -15,6 +15,7 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         monday: 'auto 40%',
+        balance: '1fr auto 1fr',
       },
       flexDirection: {
         unset: 'unset',
