@@ -4,4 +4,5 @@
 
 ![Signup Layout](https://github.com/tony-sn/monday_fe/blob/tony/01_signup/src/assets/monday_signup_layout.png).
 
-
+### Signup Layout 2
+![Signup Layout2](https://github.com/tony-sn/monday_fe/blob/tony/01_signup/src/assets/monday_signup_layout2.png).
