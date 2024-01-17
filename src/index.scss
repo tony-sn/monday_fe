@@ -7,18 +7,19 @@
 :root {
   --font-family: "Figtree", "Roboto", "Noto Sans Hebrew", "Noto Kufi Arabic",
     "Noto Sans JP", sans-serif;
-  --spacing-small: 8px;
-  --spacing-medium: 16px;
   --layout-border-color: #d0d4e4;
   --text-color-on-primary: #fff;
   --primary-color: #0073e3;
   --primary-hover-color: #0060b9;
   --color-link-color: #1f76c2;
   --color-mud-black: #323338;
+  --disabled-text-color: rgb(50, 51, 56, 0.38);
+  --disabled-background-color: #ecedf5;
   --ui-border-color: #c3c6d4;
   --primary-text-color: #323338;
   --primary-background-hover-color: #dcdfec;
   --spacing-small: 8px;
+  --spacing-medium: 16px;
   --spacing-large: 24px;
   --spacing-xxxl: 64px;
 }
