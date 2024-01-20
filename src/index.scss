@@ -23,3 +23,9 @@
   --spacing-large: 24px;
   --spacing-xxxl: 64px;
 }
+
+.ant-radio-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-inline-end: 0px;
+}

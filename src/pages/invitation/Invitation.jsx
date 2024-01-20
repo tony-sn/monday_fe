@@ -57,9 +57,9 @@ const Invitation = () => {
                     <div className="content relative mt-0 w-full flex-[8]">
                       <div className="toggle-group-component text-[32px] font-extralight leading-[56px]">
                         <div className="title-wrapper mb-[var(--spacing-small)]">
-                          <h1 className="overflow-hidden p-0 text-left text-2xl font-medium tracking-[-0.1px] text-[var(--color-mud-black)]">
+                          <h2 className="overflow-hidden p-0 text-left font-poppins text-2xl font-medium tracking-[-0.1px] text-[var(--color-mud-black)]">
                             Hey there, what brings you here today?
-                          </h1>
+                          </h2>
                         </div>
                         <div className="toggle-group-list">
                           <div className="toggle-groups-group">
@@ -76,7 +76,9 @@ const Invitation = () => {
                                   className="ml-2 mt-4 cursor-pointer rounded-[32px] border border-[var(--ui-border-color)] px-[var(--spacing-medium)] py-[var(--spacing-small)]"
                                 >
                                   <Radio value={option.value}>
-                                    {option.label}
+                                    <span className="ant-span ml-1">
+                                      {option.label}
+                                    </span>
                                   </Radio>
                                 </div>
                               ))}
@@ -88,9 +90,9 @@ const Invitation = () => {
                       {selected !== "Personal" && (
                         <div className="toggle-group-component mt-[var(--spacing-xxxl)] text-[32px] font-extralight leading-[56px]">
                           <div className="title-wrapper mb-[var(--spacing-small)]">
-                            <h1 className="overflow-hidden p-0 text-left text-2xl font-medium tracking-[-0.1px] text-[var(--color-mud-black)]">
+                            <h2 className="overflow-hidden p-0 text-left font-poppins text-2xl font-medium tracking-[-0.1px] text-[var(--color-mud-black)]">
                               What best describes your current role?
-                            </h1>
+                            </h2>
                           </div>
                           <div className="toggle-group-list">
                             <div className="toggle-groups-group">
@@ -106,7 +108,9 @@ const Invitation = () => {
                                     className="ml-2 mt-4 cursor-pointer rounded-[32px] border border-[var(--ui-border-color)] px-[var(--spacing-medium)] py-[var(--spacing-small)]"
                                   >
                                     <Radio value={role.value}>
-                                      {role.label}
+                                      <span className="ant-span ml-1">
+                                        {role.label}
+                                      </span>
                                     </Radio>
                                   </div>
                                 ))}
@@ -122,7 +126,7 @@ const Invitation = () => {
                         <button
                           disabled={!selectedRole && selected !== "Personal"}
                           type="button"
-                          className="submit-button inline-flex h-10 min-w-[auto] cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-[4px] bg-[var(--primary-color)] px-4 py-2 text-base font-normal text-white antialiased opacity-90 transition-[min-width] hover:bg-[var(--primary-hover-color)] disabled:cursor-not-allowed disabled:bg-[var(--disabled-background-color)] disabled:text-[var(--disabled-text-color)]"
+                          className="submit-button inline-flex h-10 min-w-[auto] cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-[4px] bg-[var(--primary-hover-color)] px-4 py-2 text-base font-normal text-white antialiased opacity-90 transition-[min-width] hover:bg-[var(--primary-hover-color)] focus-visible:z-[11] focus-visible:rounded-s focus-visible:shadow-monday disabled:cursor-not-allowed disabled:bg-[var(--disabled-background-color)] disabled:text-[var(--disabled-text-color)]"
                           tabIndex={0}
                           data-testid="button"
                           aria-disabled="false"
