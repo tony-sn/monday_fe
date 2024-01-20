@@ -68,14 +68,14 @@ const Invitation = () => {
                               className="toggle-option-group-component flex flex-wrap"
                             >
                               {optionGroup.map((option) => (
-                                <label
+                                <div
                                   key={`${option.label}`}
                                   className="ml-2 mt-4 cursor-pointer rounded-[32px] border border-[var(--ui-border-color)] px-[var(--spacing-medium)] py-[var(--spacing-small)]"
                                 >
                                   <Radio value={option.value}>
                                     {option.label}
                                   </Radio>
-                                </label>
+                                </div>
                               ))}
                             </Radio.Group>
                           </div>
@@ -98,14 +98,14 @@ const Invitation = () => {
                                 className="toggle-option-group-component flex flex-wrap"
                               >
                                 {chosenRoleGroup.map((role) => (
-                                  <label
+                                  <div
                                     key={`${role.label}`}
                                     className="ml-2 mt-4 cursor-pointer rounded-[32px] border border-[var(--ui-border-color)] px-[var(--spacing-medium)] py-[var(--spacing-small)]"
                                   >
                                     <Radio value={role.value}>
                                       {role.label}
                                     </Radio>
-                                  </label>
+                                  </div>
                                 ))}
                               </Radio.Group>
                             </div>
