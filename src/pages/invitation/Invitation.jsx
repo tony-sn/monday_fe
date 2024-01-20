@@ -19,7 +19,10 @@ const Invitation = () => {
     (opt) => opt.value === selected,
   ).currentRoles;
   return (
-    <div id="invitation-container" className="h-full w-full font-monday">
+    <div
+      id="invitation-container"
+      className="flex h-screen w-full justify-center font-monday"
+    >
       <div className="invitation-loader" />
       <div id="invitation-form" className="h-full w-full">
         <div
@@ -38,7 +41,7 @@ const Invitation = () => {
                 >
                   <div
                     id="monday-left-screen"
-                    className="relative flex h-full w-full flex-1 flex-col items-center justify-between bg-white px-[calc(2*var(--spacing-xxxl))] py-[var(--spacing-xxxl)]"
+                    className="relative box-border flex h-full flex-1 flex-col items-center justify-between bg-white px-[calc(2*var(--spacing-xxxl))] py-[var(--spacing-xxxl)]"
                   >
                     <div className="header w-full flex-1">
                       <div className="header-component mb-0">
@@ -113,8 +116,9 @@ const Invitation = () => {
                         </div>
                       )}
                     </div>
-                    <div className="submit-button-wrapper large-signup-modal sticky bottom-2 right-0 flex w-[calc(100%+2px)] justify-end">
-                      <div className="account-setup-desktop-questions-submit-button-component large-signup-modal mt-[auto] flex items-center justify-end font-monday">
+                    <div className="submit-button-wrapper large-signup-modal mt-10  flex w-[calc(100%+2px)] flex-1 justify-end">
+                      <div className="left-bar mt-auto flex-grow" />
+                      <div className="account-setup-desktop-questions-submit-button-component large-signup-modal mt-auto flex items-center justify-end font-monday">
                         <button
                           disabled={!selectedRole && selected !== "Personal"}
                           type="button"
@@ -145,12 +149,14 @@ const Invitation = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="monday-screen-right">
-                    <img
-                      className="h-full w-full bg-cover bg-center object-cover"
-                      src="https://dapulse-res.cloudinary.com/image/upload/monday_platform/signup/signup-right-side-assets-new-flow/what-brings-you-here-today.png"
-                      alt="what bring you here today?"
-                    />
+                  <div className="monday-screen-right mx-auto my-auto flex h-full w-full justify-center bg-[#6161ff] bg-cover bg-center object-cover">
+                    <div className="monday-image-wrapper">
+                      <img
+                        className="h-full max-h-[1000px] w-full bg-cover bg-center"
+                        src="https://dapulse-res.cloudinary.com/image/upload/monday_platform/signup/signup-right-side-assets-new-flow/what-brings-you-here-today.png"
+                        alt="what bring you here today?"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
