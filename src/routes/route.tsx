@@ -2,9 +2,9 @@ import { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import signupAction from "./action/signup";
 
-const Signup = lazy(() => import("../pages/signup/Signup"));
-const SignupEmail = lazy(() => import("../pages/signupEmail/SignupEmail"));
-const SignupLayout = lazy(() => import("../layouts/SignupLayout"));
+const Signup = lazy(() => import("src/pages/signup/Signup"));
+const SignupEmail = lazy(() => import("src/pages/signupEmail/SignupEmail"));
+const SignupLayout = lazy(() => import("src/layouts/SignupLayout"));
 
 const route = createBrowserRouter([
   {

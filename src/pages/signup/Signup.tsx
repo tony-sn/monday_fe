@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { Form, useActionData } from "react-router-dom";
+import {
+  RightImage,
+  RightImageWrapper,
+} from "src/components/rightImage/RightImage";
 const SignUp = () => {
   const [email, setEmail] = useState("");
 
@@ -137,16 +141,12 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-      <div
-        id="monday-right-screen"
-        className="flex justify-center overflow-hidden bg-[var(--primary-image-bg-color)]"
-      >
-        <img
+      <RightImageWrapper>
+        <RightImage
           alt="Welcome to monday.com"
-          className="h-full w-[unset] max-w-none"
           src="https://dapulse-res.cloudinary.com/image/upload/monday_platform/signup/signup-right-side-assets-new-flow/welcome-to-monday.png"
         />
-      </div>
+      </RightImageWrapper>
     </>
   );
 };

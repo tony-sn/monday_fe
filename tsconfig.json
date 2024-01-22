@@ -2,13 +2,6 @@
   "compilerOptions": {
     "target": "es2016",
     "module": "commonjs",
-    "baseUrl": "./",
-    "path": {
-      "@/*": ["src/*"],
-      "components/*": ["src/components/*"],
-      "layouts/*": ["src/layouts/*"],
-      "pages/*": ["src/pages/*"]
-    },
     "jsx": "react-jsx",
     "allowJs": true,
     "checkJs": true,
@@ -17,6 +10,13 @@
     "strict": true,
     "noImplicitAny": true,
     "skipDefaultLibCheck": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "path": {
+      "@/*": ["src/*"],
+      "components/*": ["src/components/*"],
+      "layouts/*": ["src/layouts/*"],
+      "pages/*": ["src/pages/*"]
+    }
   }
 }

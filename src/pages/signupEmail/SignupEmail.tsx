@@ -1,3 +1,8 @@
+import {
+  RightImage,
+  RightImageWrapper,
+} from "src/components/rightImage/RightImage";
+
 const SignUpEmail = () => {
   return (
     <>
@@ -48,10 +53,7 @@ const SignUpEmail = () => {
                       type="text"
                       id="user[name]"
                       data-testid="text-field_user[name]"
-                      role
                       aria-label="Full name"
-                      aria-owns
-                      aria-activedescendant
                       tabIndex={0}
                     />
                     <div
@@ -97,10 +99,7 @@ const SignUpEmail = () => {
                       type="password"
                       id="user[password]"
                       data-testid="text-field_user[password]"
-                      role
                       aria-label="Full name"
-                      aria-owns
-                      aria-activedescendant
                       tabIndex={0}
                       aria-invalid="true"
                     />
@@ -141,10 +140,7 @@ const SignUpEmail = () => {
                       type="text"
                       id="user[accountName]"
                       data-testid="text-field_user[accountName]"
-                      role
                       aria-label="Full name"
-                      aria-owns
-                      aria-activedescendant
                       tabIndex={0}
                       aria-invalid="true"
                     />
@@ -198,16 +194,12 @@ const SignUpEmail = () => {
         </div>
       </div>
       {/* Right Screen Start*/}
-      <div
-        id="monday-right-screen"
-        className="flex justify-center overflow-hidden bg-[rgb(97,97,255)]"
-      >
-        <img
+      <RightImageWrapper>
+        <RightImage
           alt="Create your account"
-          className="h-full w-[unset] max-w-none"
           src="https://dapulse-res.cloudinary.com/image/upload/monday_platform/signup/signup-right-side-assets-new-flow/set-up-your-account.png"
         />
-      </div>
+      </RightImageWrapper>
     </>
   );
 };
