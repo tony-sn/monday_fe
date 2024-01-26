@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, useActionData } from "react-router-dom";
+import { Form } from "react-router-dom";
 import {
   RightImage,
   RightImageWrapper,
@@ -11,9 +11,7 @@ const SignUp = () => {
     target: { value },
   }: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(value);
-    console.log("email is: ", value);
   };
-  let actionData = useActionData() as { error: string } | undefined;
   return (
     <>
       <div
