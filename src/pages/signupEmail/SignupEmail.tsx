@@ -1,4 +1,4 @@
-import { redirect } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import {
   RightImage,
@@ -7,6 +7,7 @@ import {
 import { SignupSchema } from "src/schema/SignupSchema";
 
 const SignUpEmail = () => {
+  const navigate = useNavigate();
   return (
     <>
       {/* Left Screen Start */}
@@ -20,6 +21,7 @@ const SignUpEmail = () => {
         onSubmit={(values, { setErrors, setSubmitting }) => {
           console.log("values", values);
           setSubmitting(false);
+          navigate("/invitation");
         }}
       >
         {({
@@ -190,7 +192,11 @@ const SignUpEmail = () => {
                             value={values.accountName}
                             onChange={handleChange}
                             placeholder="For example, company's or department's name"
-                            className="signup-input relative h-12 w-full rounded-[4px] border border-[var(--ui-border-color)] px-4 py-2"
+                            className={`signup-input relative h-12 w-full rounded-[4px] border ${
+                              touched.accountName && errors.accountName
+                                ? "border-red-500"
+                                : "border-[var(--ui-border-color)]"
+                            } px-4 py-2`}
                             autoComplete="accountName"
                             id="user[accountName]"
                             data-testid="text-field_user[accountName]"
@@ -210,6 +216,13 @@ const SignUpEmail = () => {
                             className="clickable_97e9bc50c5 iconContainer_a66c956251 iconContainerActive_3dc7c8dcfb disableTextSelection_c16718f5a7"
                           />
                         </div>
+                        {errors.accountName && touched.accountName && (
+                          <div className="error-text-wrapper flex">
+                            <span className="error-text text-sm font-normal text-red-500">
+                              {errors.accountName}
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>

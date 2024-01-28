@@ -6,5 +6,6 @@ export const SignupSchema = Yup.object().shape({
     .required("Enter your full name"),
   password: Yup.string()
     .min(8, "Password is too short")
-    .required("Enter your password"),
+    .required("Create a password"),
+  accountName: Yup.string().required("Name your account"),
 });
