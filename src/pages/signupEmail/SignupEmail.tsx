@@ -1,3 +1,4 @@
+import { redirect } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import {
   RightImage,
@@ -16,8 +17,9 @@ const SignUpEmail = () => {
           accountName: "",
         }}
         validationSchema={SignupSchema}
-        onSubmit={(values) => {
+        onSubmit={(values, { setErrors, setSubmitting }) => {
           console.log("values", values);
+          setSubmitting(false);
         }}
       >
         {({

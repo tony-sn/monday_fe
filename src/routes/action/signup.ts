@@ -1,9 +1,4 @@
-import {
-  Form,
-  useLoaderData,
-  redirect,
-  LoaderFunctionArgs,
-} from "react-router-dom";
+import { redirect, LoaderFunctionArgs } from "react-router-dom";
 
 export default async function action({ request, params }: LoaderFunctionArgs) {
   const formData = await request.formData();
