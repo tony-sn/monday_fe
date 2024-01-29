@@ -6,6 +6,7 @@ import signupEmailAction from "./action/signupEmail";
 const Signup = lazy(() => import("src/pages/signup/Signup"));
 const SignupEmail = lazy(() => import("src/pages/signupEmail/SignupEmail"));
 const Invitation = lazy(() => import("src/pages/invitation/Invitation"));
+const LastQuestion = lazy(() => import("src/pages/lastQuestion/LastQuestion"));
 const SignupLayout = lazy(() => import("src/layouts/SignupLayout"));
 const route = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const route = createBrowserRouter([
       {
         path: "/invitation",
         Component: Invitation,
+      },
+      {
+        path: "/last-question",
+        Component: LastQuestion,
       },
     ],
   },

@@ -1,12 +1,13 @@
-import { Radio, RadioChangeEvent } from "antd";
-
 import { useState } from "react";
-import { Form } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
+
+import { Radio, RadioChangeEvent } from "antd";
 
 import { optionGroup } from "./constant";
 import { Role } from "src/types/signup";
 
 const Invitation = () => {
+  const navigate = useNavigate();
   const [selected, setSelected] = useState("Work");
   const [selectedRole, setSelectedRole] = useState("");
 
@@ -20,9 +21,16 @@ const Invitation = () => {
   const chosenRoleGroup: Role[] | undefined = optionGroup.find(
     (opt) => opt.value === selected,
   )?.currentRoles;
+
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    if (selectedRole || selected === "Personal") {
+      navigate("/last-question");
+    }
+  };
   return (
     <>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <div
           id="monday-left-screen"
           className="relative box-border flex h-full flex-1 flex-col items-center justify-between bg-white px-[calc(2*var(--spacing-xxxl))] py-[var(--spacing-xxxl)]"
@@ -105,7 +113,7 @@ const Invitation = () => {
             <div className="account-setup-desktop-questions-submit-button-component large-signup-modal mt-auto flex items-center justify-end font-monday">
               <button
                 disabled={!selectedRole && selected !== "Personal"}
-                type="button"
+                type="submit"
                 className="submit-button inline-flex h-10 min-w-[auto] cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-[4px] bg-[var(--primary-hover-color)] px-4 py-2 text-base font-normal text-white antialiased opacity-90 transition-[min-width] hover:bg-[var(--primary-hover-color)] focus-visible:z-[11] focus-visible:rounded-s focus-visible:shadow-monday disabled:cursor-not-allowed disabled:bg-[var(--disabled-background-color)] disabled:text-[var(--disabled-text-color)]"
                 tabIndex={0}
                 data-testid="button"
