@@ -3,11 +3,12 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import signupAction from "./action/signup";
 import signupEmailAction from "./action/signupEmail";
 
-const Signup = lazy(() => import("src/pages/signup/Signup"));
-const SignupEmail = lazy(() => import("src/pages/signupEmail/SignupEmail"));
-const Invitation = lazy(() => import("src/pages/invitation/Invitation"));
-const LastQuestion = lazy(() => import("src/pages/lastQuestion/LastQuestion"));
-const SignupLayout = lazy(() => import("src/layouts/SignupLayout"));
+const Signup = lazy(() => import("@/pages/signup/Signup"));
+const SignupEmail = lazy(() => import("@/pages/signupEmail/SignupEmail"));
+const Invitation = lazy(() => import("@/pages/invitation/Invitation"));
+const LastQuestion = lazy(() => import("@/pages/lastQuestion/LastQuestion"));
+const SignupLayout = lazy(() => import("@/layouts/SignupLayout"));
+
 const route = createBrowserRouter([
   {
     path: "/",

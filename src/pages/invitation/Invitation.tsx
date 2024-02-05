@@ -4,7 +4,7 @@ import { Form, useNavigate } from "react-router-dom";
 import { Radio, RadioChangeEvent } from "antd";
 
 import { optionGroup } from "./constant";
-import { Role } from "src/types/signup";
+import { Role } from "@/types/signup";
 
 const Invitation = () => {
   const navigate = useNavigate();

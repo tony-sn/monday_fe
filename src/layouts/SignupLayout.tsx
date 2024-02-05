@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 
-import LoadingScreen from "../components/loadingScreen";
+import LoadingScreen from "@components/loadingScreen";
 
 const SignupLayout = () => {
   return (

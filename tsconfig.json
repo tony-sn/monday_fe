@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
-    "jsx": "react-jsx",
+    "target": "es2020",
+    "module": "esnext",
+    "jsx": "preserve",
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
@@ -11,12 +11,13 @@
     "noImplicitAny": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
-    "path": {
-      "@/*": ["src/*"],
-      "components/*": ["src/components/*"],
-      "layouts/*": ["src/layouts/*"],
-      "pages/*": ["src/pages/*"]
-    }
-  }
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": ["src"],
+  "extends": "./tsconfig.path.json"
 }

@@ -3,8 +3,8 @@ import { Formik, Form, Field } from "formik";
 import {
   RightImage,
   RightImageWrapper,
-} from "src/components/rightImage/RightImage";
-import { SignupSchema } from "src/schema/SignupSchema";
+} from "@/components/rightImage/RightImage";
+import { SignupSchema } from "@/schema/SignupSchema";
 
 const SignUpEmail = () => {
   const navigate = useNavigate();

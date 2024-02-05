@@ -3,7 +3,7 @@ import { Form } from "react-router-dom";
 import {
   RightImage,
   RightImageWrapper,
-} from "src/components/rightImage/RightImage";
+} from "@/components/rightImage/RightImage";
 const SignUp = () => {
   const [email, setEmail] = useState("");
 
