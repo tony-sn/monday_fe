@@ -31,6 +31,14 @@
   margin-inline-end: 0px;
 }
 
+.ant-select-dropdown {
+  width: 250px !important;
+}
+
+.ant-select-selector {
+  width: 100px !important;
+}
+
 .loading-screen-wrapper {
   @apply absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4;
 }

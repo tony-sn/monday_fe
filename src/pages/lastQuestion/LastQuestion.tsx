@@ -30,10 +30,15 @@ const LastQuestion = () => {
     // simulate a network request
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+
+      if (isLoading) {
+        navigate("/invite-mates");
+      }
+    }, 3000);
 
     return () => clearTimeout(timer);
-  }, [isLoading]);
+  }, [isLoading, navigate]);
+
   return (
     <>
       <Form onSubmit={handleSubmit}>
@@ -65,12 +70,12 @@ const LastQuestion = () => {
                     {socialMedia.map((option) => (
                       <Button
                         key={option.label}
-                        className="ml-[var(--spacing-small)] mt-[var(--spacing-medium)]  inline-flex h-10 min-w-[auto] cursor-pointer select-none items-center justify-center rounded-[32px] border border-[var(--ui-border-color)] px-[var(--spacing-medium)] py-[var(--spacing-small)] !font-light text-[#676879] hover:!border-[var(--ui-border-color)]"
+                        className="ml-[var(--spacing-small)] mt-[var(--spacing-medium)] inline-flex  h-10 min-w-[auto] cursor-pointer select-none items-center justify-center rounded-[32px] border border-[var(--ui-border-color)] px-[var(--spacing-medium)] py-[var(--spacing-small)] !font-light text-[#676879] hover:!border-[var(--ui-border-color)]"
                       >
                         <label className="relative flex h-min w-fit items-center font-monday">
                           <input
                             type="checkbox"
-                            className="form-checkbox mr-[var(--spacing-small)] h-4 w-4"
+                            className="form-checkbox mr-[var(--spacing-small)] h-4 w-4 cursor-pointer"
                           />
                           <span className="ml-2 text-base !font-light !text-[#676879]">
                             {option.label}
@@ -117,7 +122,7 @@ const LastQuestion = () => {
             <div className="account-setup-desktop-questions-submit-button-component large-signup-modal right-bar mt-auto flex items-center justify-end font-monday">
               <button
                 type="submit"
-                className="submit-button inline-flex h-10 min-w-[100px] cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-[4px] bg-[var(--primary-color)] px-4 py-2 text-base font-normal text-white antialiased transition-[min-width] hover:bg-[var(--primary-hover-color)] focus-visible:z-[11] focus-visible:rounded-s focus-visible:shadow-monday disabled:cursor-not-allowed disabled:bg-[var(--disabled-background-color)] disabled:text-[var(--disabled-text-color)]"
+                className="submit-button inline-flex h-10 min-w-[125px] cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-[4px] bg-[var(--primary-color)] px-4 py-2 text-base font-normal text-white antialiased transition-[min-width] hover:bg-[var(--primary-hover-color)] focus-visible:z-[11] focus-visible:rounded-s focus-visible:shadow-monday disabled:cursor-not-allowed disabled:bg-[var(--disabled-background-color)] disabled:text-[var(--disabled-text-color)]"
                 tabIndex={0}
                 data-testid="button"
                 aria-disabled="false"
