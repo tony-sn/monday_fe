@@ -114,7 +114,7 @@ const Invitation = () => {
               <button
                 disabled={!selectedRole && selected !== "Personal"}
                 type="submit"
-                className="submit-button inline-flex h-10 min-w-[auto] cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-[4px] bg-[var(--primary-hover-color)] px-4 py-2 text-base font-normal text-white antialiased opacity-90 transition-[min-width] hover:bg-[var(--primary-hover-color)] focus-visible:z-[11] focus-visible:rounded-s focus-visible:shadow-monday disabled:cursor-not-allowed disabled:bg-[var(--disabled-background-color)] disabled:text-[var(--disabled-text-color)]"
+                className="submit-button inline-flex h-10 min-w-[125px] cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-[4px] bg-[var(--primary-color)] px-4 py-2 text-base font-normal text-white antialiased transition-[min-width] hover:bg-[var(--primary-hover-color)] focus-visible:z-[11] focus-visible:rounded-s focus-visible:shadow-monday disabled:cursor-not-allowed disabled:bg-[var(--disabled-background-color)] disabled:text-[var(--disabled-text-color)]"
                 tabIndex={0}
                 data-testid="button"
                 aria-disabled="false"
