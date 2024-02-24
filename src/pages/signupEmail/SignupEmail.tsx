@@ -1,5 +1,6 @@
-import { redirect, useNavigate } from "react-router-dom";
-import { Formik, Form, Field } from "formik";
+import { Field, Form, Formik } from "formik";
+import { useNavigate } from "react-router-dom";
+
 import {
   RightImage,
   RightImageWrapper,
@@ -18,7 +19,7 @@ const SignUpEmail = () => {
           accountName: "",
         }}
         validationSchema={SignupSchema}
-        onSubmit={(values, { setErrors, setSubmitting }) => {
+        onSubmit={(values, { setSubmitting }) => {
           console.log("values", values);
           setSubmitting(false);
           navigate("/invitation");
