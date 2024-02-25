@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Form } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
 
-import { PlusOutlined, DownOutlined } from "@ant-design/icons";
+import { DownOutlined, PlusOutlined } from "@ant-design/icons";
 import { Button, Input, Select, Space } from "antd";
 
 const roleOptions = [
@@ -10,19 +10,42 @@ const roleOptions = [
 ];
 
 const InviteMates = () => {
+  const navigate = useNavigate();
   const [emailList, setEmailList] = useState([
-    { name: "", value: "" },
-    { name: "", value: "" },
+    { name: "", value: "", role: "Admin" },
+    { name: "", value: "", role: "Admin" },
   ]);
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
 
+  const updateEmailList = (
+    index: number,
+    updatedEmail: { name: string; value: string; role: string },
+  ) => {
+    setEmailList((prev) => {
+      const updatedList = [...prev];
+      updatedList[index] = updatedEmail;
+      return updatedList;
+    });
+  };
   const handleBlur = () => setActiveIndex(-1);
   const handleClick = () => {
     if (!open) setActiveIndex(-1);
   };
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number,
+  ) => {
+    const updateEmail = { ...emailList[index], value: e.target.value };
+    updateEmailList(index, updateEmail);
+  };
+  const handleRoleChange = (value: string, index: number) => {
+    const updateEmail = { ...emailList[index], role: value };
+    updateEmailList(index, updateEmail);
+  };
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+    console.log("submitted email list: ", emailList);
   };
   return (
     <>
@@ -63,6 +86,10 @@ const InviteMates = () => {
                         <Input
                           placeholder="Add email here"
                           value={email.value}
+                          onChange={(e) => handleChange(e, index)}
+                          style={{
+                            width: "70%",
+                          }}
                         />
                         <Select
                           onDropdownVisibleChange={(visible) =>
@@ -76,8 +103,9 @@ const InviteMates = () => {
                               className={`${open && index === activeIndex ? "rotate-180 transition-all duration-500" : ""}`}
                             />
                           }
-                          defaultValue="Admin"
+                          defaultValue={email.role}
                           options={roleOptions}
+                          onChange={(value) => handleRoleChange(value, index)}
                           optionRender={(option) => (
                             <Space direction="vertical" className="!w-full">
                               <span>{option.data.label}</span>
@@ -94,12 +122,60 @@ const InviteMates = () => {
                   icon={<PlusOutlined />}
                   onClick={(e) => {
                     e.preventDefault();
-                    setEmailList((p) => [...p, { name: "", value: "" }]);
+                    setEmailList((p) => [
+                      ...p,
+                      { name: "", value: "", role: "Admin" },
+                    ]);
                   }}
                 >
                   Add another
                 </Button>
               </div>
+            </div>
+          </div>
+
+          <div className="submit-button-wrapper large-signup-modal mt-10 flex w-[calc(100%+2px)] flex-1">
+            <div className="left-bar mt-auto flex-grow">
+              <button
+                type="button"
+                onClick={() => navigate("/dashboard")}
+                className="submit-button inline-flex h-10 min-w-[auto] cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-[4px] border border-[var(--ui-border-color)] bg-transparent px-4 py-2 text-base font-normal text-[var(--primary-text-color)] antialiased transition-[min-width] hover:bg-[var(--primary-background-hover-color)] focus-visible:z-[11] focus-visible:rounded-s focus-visible:shadow-monday disabled:cursor-not-allowed disabled:bg-[var(--disabled-background-color)] disabled:text-[var(--disabled-text-color)]"
+                tabIndex={0}
+                data-testid="button"
+                aria-disabled="false"
+                aria-busy="false"
+              >
+                Remind me later
+              </button>
+            </div>
+
+            <div className="account-setup-desktop-questions-submit-button-component large-signup-modal right-bar mt-auto flex items-center justify-end font-monday">
+              <button
+                type="submit"
+                className="submit-button inline-flex h-10 min-w-[125px] cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-[4px] bg-[var(--primary-color)] px-4 py-2 text-base font-normal text-white antialiased transition-[min-width] hover:bg-[var(--primary-hover-color)] focus-visible:z-[11] focus-visible:rounded-s focus-visible:shadow-monday disabled:cursor-not-allowed disabled:bg-[var(--disabled-background-color)] disabled:text-[var(--disabled-text-color)]"
+                tabIndex={0}
+                data-testid="button"
+                aria-disabled="false"
+                aria-busy="false"
+              >
+                <span>Continue</span>
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  width={20}
+                  height={20}
+                  aria-hidden="true"
+                  className="icon_c85ee8f381 rightIcon_b8664810bd noFocusStyle_7a93ee2575 ml-2"
+                  data-testid="icon"
+                >
+                  <path
+                    d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
+                    fill="currentColor"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
