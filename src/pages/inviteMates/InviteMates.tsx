@@ -36,7 +36,11 @@ const InviteMates = () => {
     e: React.ChangeEvent<HTMLInputElement>,
     index: number,
   ) => {
-    const updateEmail = { ...emailList[index], value: e.target.value };
+    const updateEmail = {
+      ...emailList[index],
+      name: e.target.value,
+      value: e.target.value,
+    };
     updateEmailList(index, updateEmail);
   };
   const handleRoleChange = (value: string, index: number) => {

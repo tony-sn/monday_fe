@@ -9,6 +9,7 @@ const Invitation = lazy(() => import("@/pages/invitation/Invitation"));
 const LastQuestion = lazy(() => import("@/pages/lastQuestion/LastQuestion"));
 const InviteMates = lazy(() => import("@/pages/inviteMates/InviteMates"));
 const SignupLayout = lazy(() => import("@/layouts/SignupLayout"));
+const Dashboard = () => <>Dashboard</>; // NOTE: temp component
 
 const route = createBrowserRouter([
   {
@@ -43,6 +44,7 @@ const route = createBrowserRouter([
         path: "/invite-mates",
         Component: InviteMates,
       },
+      { path: "/dashboard", Component: Dashboard },
     ],
   },
 ]);
