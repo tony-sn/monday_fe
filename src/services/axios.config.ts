@@ -1,10 +1,10 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios, { InternalAxiosRequestConfig } from "axios";
 export const https = axios.create({
   baseURL: "https://shop.cyberlearn.vn",
 });
 
 https.interceptors.request.use(
-  (config: AxiosRequestConfig) => {
+  (config: InternalAxiosRequestConfig & any) => {
     // đây sẽ là nơi giúp chỉnh sửa thêm hoặc đổi dữ liệu trước khi gửi lên BE
     // config.headers = {
     //   Authorization: 'Bearer' + 'huhu12sasd',
