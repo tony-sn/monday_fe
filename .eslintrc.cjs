@@ -7,7 +7,12 @@ module.exports = {
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs", "vite.config.ts"],
+  ignorePatterns: [
+    "dist",
+    ".eslintrc.cjs",
+    "vite.config.ts",
+    "tailwind.config.js",
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "18.2" } },
